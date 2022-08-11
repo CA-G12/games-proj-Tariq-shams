@@ -14,9 +14,8 @@ Live Demo: [Here]()
 
 ## How to Install: 
 
-1. Clone this repo: 
-``` https://github.com/CA-G12/games-proj-Tariq-shams.git ```
-2. Then Run ``` npm install ```
+1. Clone this repo: ``` https://github.com/CA-G12/games-proj-Tariq-shams.git ```
+2. Run ``` npm install ```
 3. Run it on server ``` npm start ```
  
  🥳 You're all set, enjoy... 
