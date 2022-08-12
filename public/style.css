@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: #222222;
+}
+/*Start of header section style*/
+header {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+header h1 {
+  font-size: 4.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+header h1 span {
+  color: #7bbcf8;
+  padding-right: 0.7rem;
+}
+/*End of header section style*/
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*Start of form section style*/
+#searching {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  outline: 0;
+  padding: 1rem 1.5rem;
+  width: 30%;
+  border: 1px solid #7bbcf8;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+#search::placeholder {
+  color: rgb(182, 182, 182);
+}
+
+.search {
+  padding: 1rem 1.5rem;
+  border: 1px solid #7bbcf8;
+  background: #7bbcf8;
+  color: #fff;
+}
+/*End of form section style*/
+/*Start of Games section style*/
+#games {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: #fff;
+}
+
+.card {
+  width: calc(95% / 5);
+  height: 250px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: 200px;
+}
+
+.card h3 {
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  padding: 0.8rem 0;
+  font-size: 0.9rem;
+  background-color: #7bbcf8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/*End of Games section style*/
