@@ -20,6 +20,7 @@ const router = (req, res) => {
     fs.readFile(filePath, (error, data) => {
       if (error) {
         res.writeHead(505, { 'Content-Type': 'text/html' });
+        res.write('Sorry, we are working on this problem ^_^');
       } else {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(data);
@@ -33,6 +34,19 @@ const router = (req, res) => {
     fs.readFile(filePath, (error, data) => {
       if (error) {
         res.writeHead(505, { 'Content-Type': 'text/html' });
+        res.write('Sorry, we are working on this problem ^_^');
+      } else {
+        res.writeHead(200, { 'Content-Type': mimTypes[extension] });
+        res.end(data);
+      }
+    });
+  } else if (endpoint === '/api.json'
+          || endpoint === '/data.json') {
+    const filePath = path.join(__dirname, '..', endpoint);
+    fs.readFile(filePath, (error, data) => {
+      if (error) {
+        res.writeHead(505, { 'Content-Type': 'text/html' });
+        res.write('Sorry, we are working on this problem ^_^');
       } else {
         res.writeHead(200, { 'Content-Type': mimTypes[extension] });
         res.end(data);
