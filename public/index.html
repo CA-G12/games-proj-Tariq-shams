@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Games</title>
-  </head>
-  <body>
-    <script src="./js/dom.js"></script>
-    <script src="./js/fetch.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="shortcut icon"
+    href="https://cdn-icons.flaticon.com/png/512/1722/premium/1722368.png?token=exp=1660293270~hmac=4785603b42dc269aa642a32fa55e8cfb"
+    type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <title>PC Gamer</title>
+</head>
+
+<body>
+  <header>
+    <h1><span>PC</span>Gamer</h1>
+  </header>
+  <main>
+    <form action="/create-game" id="searching" method="">
+      <input list="gameLists" id="search" placeholder="explore games" name="explore-game">
+      <datalist id="gameLists"></datalist>
+      <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <section id="games">
+      <div class="container">
+      </div>
+    </section>
+  </main>
+  <script src="./js/dom.js"></script>
+  <script src="./js/fetch.js"></script>
+</body>
+
 </html>
