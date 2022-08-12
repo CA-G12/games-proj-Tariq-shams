@@ -1,4 +1,4 @@
-# games-proj-Tariq-shams
+# games-proj-Tariq-Shams
 Live Demo: [Here]()
 ## Description
 ... 
@@ -14,10 +14,11 @@ Live Demo: [Here]()
 
 ## How to Install: 
 
-1. Clone this repo: ``` https://github.com/CA-G12/games-proj-Tariq-shams.git ```
-2. Run ``` npm install ```
+1. Clone this repo: ``` https://github.com/CA-G12/games-proj-Tariq-shams.git ```![clone_repo_github](https://user-images.githubusercontent.com/105603919/184351001-3db3dd32-f49a-4891-9dc9-6ab50ef2fc31.jpg)
+
+2. Run ``` npm install ``` in gitBash
 3. Run it on server ``` npm start ```
- 
+
  🥳 You're all set, enjoy... 
  
  
