@@ -1,4 +1,8 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable arrow-parens */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undef */
+
 const supertest = require('supertest');
 const { expect } = require('expect');
 const router = require('./router');
