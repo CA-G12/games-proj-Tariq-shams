@@ -40,11 +40,11 @@ function renderSuggestions(state) {
 
   state.forEach((ele) => {
     const options = document.createElement("option");
-    options.value = ele["name"];
+    options.value = ele;
     dataLists.appendChild(options);
   });
 }
 
 input.addEventListener("input", () => {
-  fetch(`../data.json`, (res) => renderSuggestions(res));
+  fetch(`games/${input.value}`, (res) => renderSuggestions(res));
 });
