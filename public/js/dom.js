@@ -27,7 +27,7 @@ submit.addEventListener("click", (e) => {
   container.textContent = "";
   const { value } = input;
   if (value) {
-    fetch(`../api.json`, (res) => {
+    fetch(`/api/${value}`, (res) => {
       addCard(res);
     });
   } else {
