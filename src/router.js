@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const https = require("https");
 
 const mimTypes = {
   ".css": "text/css",
@@ -83,6 +84,25 @@ const router = (req, res) => {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(filterResults));
       }
+    });
+  } else if (endpoint.includes("/api")) {
+    let name = endpoint.split("/")[2];
+    name = name.split("%20").join(" ");
+    let getData = "";
+    https.get(`https://www.freetogame.com/api/games?q=${name}`, (req) => {
+      req.on("data", (chunks) => {
+        getData += chunks;
+      });
+
+      req
+        .on("end", () => {
+          let parsed = JSON.parse(getData);
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(parsed));
+        })
+        .on("error", (e) => {
+          console.error(`Got error: ${e.message}`);
+        });
     });
   } else {
     res.writeHead(404, { "Content-Type": "text/html" });
