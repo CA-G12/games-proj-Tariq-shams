@@ -110,3 +110,20 @@ main {
   border-bottom-right-radius: 5px;
 }
 /*End of Games section style*/
+
+/*Media queries*/
+/*mobile screen*/
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 3.2rem;
+  }
+  .card {
+    width: 100%;
+  }
+  .search {
+    padding: 1rem;
+  }
+  #search {
+    width: 70%;
+  }
+}
