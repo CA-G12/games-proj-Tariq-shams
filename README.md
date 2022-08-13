@@ -4,7 +4,7 @@
   
 ## Description
  
- ... 
+ Our website show more than 100 game name's and description for it.
 
 ## Features: 
  - Search for games. 
