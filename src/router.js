@@ -1,4 +1,8 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable arrow-body-style */
+/* eslint-disable prefer-const */
+/* eslint-disable dot-notation */
+/* eslint-disable quotes */
 
 const fs = require("fs");
 const path = require("path");
@@ -37,8 +41,8 @@ const router = (req, res) => {
     const filePath = path.join(__dirname, "..", "public", endpoint);
     fs.readFile(filePath, (error, data) => {
       if (error) {
-        res.writeHead(505, { "Content-Type": "text/html" });
-        res.write("Sorry, we are working on this problem ^_^");
+        res.writeHead(500, { "Content-Type": "text/html" });
+        res.write("<h1>Sorry, we are working on this problem ^_^</h1>");
       } else {
         res.writeHead(200, { "Content-Type": mimTypes[extension] });
         res.end(data);
@@ -48,7 +52,8 @@ const router = (req, res) => {
     const pathFile = path.join(__dirname, "..", "/api.json");
     fs.readFile(pathFile, (err, data) => {
       if (err) {
-        console.log(err);
+        res.writeHead(500, { "Content-Type": "text/html" });
+        res.write("<h1>Sorry, we are working on this problem ^_^</h1>");
       } else {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(data);
@@ -58,7 +63,8 @@ const router = (req, res) => {
     const pathFile = path.join(__dirname, "..", "/data.json");
     fs.readFile(pathFile, (err, data) => {
       if (err) {
-        console.log(err);
+        res.writeHead(500, { "Content-Type": "text/html" });
+        res.write("<h1>Sorry, we are working on this problem ^_^</h1>");
       } else {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(data);
