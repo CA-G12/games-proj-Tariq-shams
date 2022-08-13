@@ -65,6 +65,12 @@ main {
   background: #7bbcf8;
   color: #fff;
 }
+
+.search:hover{
+  background: #4696e1;
+  cursor: pointer;
+}
+
 /*End of form section style*/
 /*Start of Games section style*/
 #games {
@@ -93,6 +99,14 @@ main {
   cursor: pointer;
 }
 
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card h3:hover { 
+  background-color: #4696e1;
+}
+
 .card img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -113,12 +127,12 @@ main {
 
 /*Media queries*/
 /*mobile screen*/
-@media (max-width: 767.98px) {
+@media (max-width: 856.98px) {
   header h1 {
     font-size: 3.2rem;
   }
   .card {
-    width: 100%;
+    width: calc(95% / 2);
   }
   .search {
     padding: 1rem;
@@ -127,3 +141,4 @@ main {
     width: 70%;
   }
 }
+
