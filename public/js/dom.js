@@ -1,50 +1,49 @@
-const input = document.querySelector("#search");
-const dataLists = document.querySelector("#gameLists");
-const submit = document.querySelector(".search");
-const container = document.querySelector(".container");
-let state = [];
+/* eslint-disable linebreak-style */
+
+const input = document.querySelector('#search');
+const dataLists = document.querySelector('#gameLists');
+const submit = document.querySelector('.search');
+const container = document.querySelector('.container');
 
 function addCard(state) {
   const { value } = input;
-  for (let i = 0; i < state.length; i++) {
-    if (state[i]["title"].toLowerCase().includes(value.toLowerCase())) {
-      let divContainer = document.createElement("div");
-      divContainer.classList = "card";
+  for (let i = 0; i < state.length; i += 1) {
+    if (state[i].title.toLowerCase().includes(value.toLowerCase())) {
+      const divContainer = document.createElement('div');
+      divContainer.classList = 'card';
       container.appendChild(divContainer);
-      let img = document.createElement("img");
-      img.src = state[i]["thumbnail"];
-      img.alt = state[i]["title"];
+      const img = document.createElement('img');
+      img.src = state[i].thumbnail;
+      img.alt = state[i].title;
       divContainer.appendChild(img);
-      let title = document.createElement("h3");
-      title.textContent = state[i]["title"];
+      const title = document.createElement('h3');
+      title.textContent = state[i].title;
       divContainer.appendChild(title);
     }
   }
 }
 
-submit.addEventListener("click", (e) => {
+submit.addEventListener('click', (e) => {
   e.preventDefault();
-  container.textContent = "";
+  container.textContent = '';
   const { value } = input;
   if (value) {
     fetch(`/api/${value}`, (res) => {
       addCard(res);
     });
-  } else {
-    return;
   }
 });
 
 function renderSuggestions(state) {
-  dataLists.textContent = "";
+  dataLists.textContent = '';
 
   state.forEach((ele) => {
-    const options = document.createElement("option");
+    const options = document.createElement('option');
     options.value = ele;
     dataLists.appendChild(options);
   });
 }
 
-input.addEventListener("input", () => {
+input.addEventListener('input', () => {
   fetch(`games/${input.value}`, (res) => renderSuggestions(res));
 });

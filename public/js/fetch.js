@@ -1,38 +1,41 @@
 /* eslint-disable linebreak-style */
-const url = "../api.json";
-const fetch = (url, cb) => {
-  let xhr = new XMLHttpRequest();
+/* eslint-disable no-undef */
+
+const url = '../api.json';
+const fetch = (argUrl, cb) => {
+  const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        let data = JSON.parse(xhr.responseText);
+        const data = JSON.parse(xhr.responseText);
         cb(data);
       }
     }
   };
 
-  xhr.open("GET", url);
+  xhr.open('GET', argUrl);
   xhr.send();
 };
 
 function buildCards(data) {
   data.forEach((e, i) => {
     if (i % 5 === 0) {
-      let divContainer = document.createElement("div");
-      divContainer.classList = "card";
+      const divContainer = document.createElement('div');
+      divContainer.classList = 'card';
       container.appendChild(divContainer);
-      let img = document.createElement("img");
-      img.src = e["thumbnail"];
-      img.alt = e["title"];
+      const img = document.createElement('img');
+      img.src = e.thumbnail;
+      img.alt = e.title;
       divContainer.appendChild(img);
-      let title = document.createElement("h3");
-      title.textContent = e["title"];
+      const title = document.createElement('h3');
+      title.textContent = e.title;
       divContainer.appendChild(title);
     }
   });
 }
 
-fetch(`../api.json`, (res) => {
+fetch(url, (res) => {
+  const state = [];
   state.push(...res);
-  buildCards(res);
+  buildCards(state);
 });
